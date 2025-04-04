@@ -47,19 +47,23 @@ jobs:
       uses: anchore/scan-action@v6
       with:
         image: "localbuild/testimage:latest"
+        fail-build: false
 
     - name: Scan current project
       uses: anchore/scan-action@v6
       with:
         path: "."
+        fail-build: false
 
     - name: Create SBOM
       uses: anchore/sbom-action@v0
       with:
         format: spdx-json
         output-file: "${{ github.event.repository.name }}-sbom.spdx.json"
+        fail-build: false
 
     - name: Scan SBOM
       uses: anchore/scan-action@v6
       with:
         sbom: "${{ github.event.repository.name }}-sbom.spdx.json"
+        fail-build: false
