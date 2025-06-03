@@ -35,4 +35,3 @@ name = "shell"
 
 [[analyzers]]
 name = "test-coverage"
-enabled = true
