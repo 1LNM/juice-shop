@@ -32,3 +32,7 @@ name = "javascript"
 
 [[analyzers]]
 name = "shell"
+
+[[analyzers]]
+name = "test-coverage"
+enabled = true
